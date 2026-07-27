@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="icon" type="image/png" href="assets/rise-tribe-symbol-64.png">
+<link rel="apple-touch-icon" href="assets/rise-tribe-symbol-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;background:#F8F6ED}
+  a{color:#C65A2E;text-decoration:none}
+  a:hover{color:#a8461f}
+  @keyframes flicker{0%,100%{opacity:.94}50%{opacity:1}}
+</style>
+</helmet>
+<div style="width:100%;background:#F8F6ED;font-family:Lato,sans-serif;color:#151625;overflow-x:hidden">
+
+  <section style="position:relative;min-height:760px;background:#0B0B0F;overflow:hidden">
+    <div style="position:absolute;left:0;right:0;bottom:0;width:100%;max-height:100%;aspect-ratio:16/9;-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.4) 15%,rgba(0,0,0,.85) 32%,#000 46%,#000 90%,rgba(0,0,0,.35) 99%,rgba(0,0,0,0) 100%);mask-image:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.4) 15%,rgba(0,0,0,.85) 32%,#000 46%,#000 90%,rgba(0,0,0,.35) 99%,rgba(0,0,0,0) 100%)">
+      <img src="assets/web/hero-stage.jpg" alt="" style="display:block;width:100%;height:100%;object-fit:contain;object-position:50% 100%" />
+    </div>
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg,#0B0B0F 0%,rgba(11,11,15,.9) 26%,rgba(11,11,15,.6) 44%,rgba(11,11,15,.22) 62%,rgba(11,11,15,.1) 78%,rgba(11,11,15,.32) 100%)"></div>
+    <div style="position:relative;z-index:2;box-sizing:border-box;max-width:1320px;margin:0 auto;padding:88px 48px;display:flex">
+    <div style="box-sizing:border-box;max-width:520px;display:flex;flex-direction:column;justify-content:center">
+      <img src="assets/rise-logo.png" alt="RISE" style="height:66px;width:auto;object-fit:contain;margin:0 0 26px -6px;align-self:flex-start" />
+      <div style="display:flex;align-items:baseline;flex-wrap:wrap;gap:14px;margin-bottom:16px">
+        <span style="color:#DFC45A;font-size:19.3px;font-weight:700;letter-spacing:.26em;text-transform:uppercase">We Rise Together</span>
+        <span style="color:rgba(223,196,90,.6);font-size:12.6px;font-weight:700;letter-spacing:.24em;text-transform:uppercase">Edition 07</span>
+      </div>
+      <h1 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(41.4px,4.7vw,62.1px);line-height:1.12;letter-spacing:-0.01em;color:#F8F6ED;margin:0 0 20px">The Authority &amp;<br />Visibility Summit</h1>
+      <p style="font-size:23.9px;font-weight:700;line-height:1.5;letter-spacing:.045em;text-transform:uppercase;color:#F8F6ED;max-width:34ch;margin:0 0 18px">For Purpose-Driven Women Ready to Make a Greater Impact</p>
+      <p style="font-size:26.4px;line-height:1.55;color:rgba(248,246,237,.88);max-width:40ch;margin:0 0 26px">Three live days of inspiring conversations, practical strategies, and intelligent business systems to build authentic authority, meaningful visibility, and a business that carries your wisdom.</p>
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:28px">
+        <div style="height:1px;width:64px;background:rgba(223,196,90,.5)"></div>
+        <span style="color:#DFC45A;font-size:15px">✦</span>
+        <div style="height:1px;width:64px;background:rgba(223,196,90,.5)"></div>
+      </div>
+      <div style="color:#DFC45A;font-size:20.8px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:10px">August 17–19, 2026</div>
+      <div style="color:#F8F6ED;font-size:18px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:44px">Live &amp; Online · Free to Attend</div>
+
+      <div id="register" style="padding:0;line-height:0;max-width:380px;margin:32px 0 16px">
+        <iframe src="https://thehub-api.mastermind.com/widget/form/8TKEeHlzeDj2SZGuWnbt" id="inline-8TKEeHlzeDj2SZGuWnbt-hero" data-layout="{'id':'INLINE'}" data-form-id="8TKEeHlzeDj2SZGuWnbt" title="We Rise Together Registration" scrolling="no" style="display:block;width:100%;height:320px;border:none;background:transparent"></iframe>
+      </div>
+      <div style="font-size:20.6px;color:rgba(248,246,237,.78);letter-spacing:.02em">Free registration · No card required</div>
+    </div>
+    </div>
+  </section>
+
+  <section style="background:#0B0B0F;padding:36px 48px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:40px">
+    <sc-if value="{{ countdownLive }}" hint-placeholder-val="{{ false }}">
+      <div style="font-family:'Playfair Display',serif;font-style:italic;color:#DFC45A;font-size:27.6px">We are live right now ✦</div>
+    </sc-if>
+    <sc-if value="{{ countdownNotLive }}" hint-placeholder-val="{{ true }}">
+      <div style="color:#F8F6ED;font-size:18px;letter-spacing:.18em;text-transform:uppercase;font-weight:700">Doors Open In</div>
+      <div style="display:flex;gap:28px">
+        <div style="text-align:center"><div style="font-family:'Playfair Display',serif;font-size:41.4px;color:#DFC45A;font-weight:500">{{ cdDays }}</div><div style="font-size:15.1px;color:rgba(248,246,237,.68);letter-spacing:.12em;text-transform:uppercase">Days</div></div>
+        <div style="text-align:center"><div style="font-family:'Playfair Display',serif;font-size:41.4px;color:#DFC45A;font-weight:500">{{ cdHours }}</div><div style="font-size:15.1px;color:rgba(248,246,237,.68);letter-spacing:.12em;text-transform:uppercase">Hours</div></div>
+        <div style="text-align:center"><div style="font-family:'Playfair Display',serif;font-size:41.4px;color:#DFC45A;font-weight:500">{{ cdMins }}</div><div style="font-size:15.1px;color:rgba(248,246,237,.68);letter-spacing:.12em;text-transform:uppercase">Min</div></div>
+        <div style="text-align:center"><div style="font-family:'Playfair Display',serif;font-size:41.4px;color:#DFC45A;font-weight:500">{{ cdSecs }}</div><div style="font-size:15.1px;color:rgba(248,246,237,.68);letter-spacing:.12em;text-transform:uppercase">Sec</div></div>
+      </div>
+    </sc-if>
+  </section>
+
+  <section style="max-width:820px;margin:0 auto;padding:132px 48px 124px;text-align:center">
+    <p style="font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(27.6px,3.14vw,36.8px);line-height:1.45;color:#151625;margin:0 0 34px">You didn't come here to become more visible.</p>
+    <p style="font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(32px,3.7vw,43px);line-height:1.4;color:#151625;margin:0 0 34px">You came because <em style="color:#C65A2E;font-style:italic">your work is important</em>.</p>
+    <p style="font-size:26.5px;line-height:1.7;color:rgba(21,22,37,.75);max-width:56ch;margin:0 auto 20px">And deep down, you know your mission is meant to reach further than it has so far.</p>
+    <p style="font-size:26.5px;line-height:1.7;color:rgba(21,22,37,.75);max-width:56ch;margin:0 auto">Visibility is simply what allows your wisdom to find the people it's here to serve.</p>
+  </section>
+
+  <div style="display:flex;align-items:center;justify-content:center;gap:20px;padding:8px 24px 8px">
+    <div style="height:1px;width:80px;background:#DFC45A"></div>
+    <img src="assets/rise-tribe-symbol.png" alt="" style="width:104px;height:104px;object-fit:contain" />
+    <div style="height:1px;width:80px;background:#DFC45A"></div>
+  </div>
+
+  <section style="background:#0B0B0F;padding:88px 48px;text-align:center">
+    <div style="max-width:820px;margin:0 auto">
+      <h2 style="font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(30px,3.4vw,39px);line-height:1.35;color:#F8F6ED;margin:0 0 28px">This Isn't Another Social Media Summit</h2>
+      <p style="font-size:28px;line-height:1.65;color:rgba(248,246,237,.85);margin:0">You'll discover how books, podcasts, partnerships, AI, and authentic authority work together to create lasting visibility without feeling like you have to be online every day.</p>
+    </div>
+  </section>
+
+  <section style="max-width:1160px;margin:0 auto;padding:40px 48px 96px;text-align:center">
+    <div style="color:#C65A2E;font-size:16.6px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;margin-bottom:14px">Three Live Days</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(34.5px,4.03vw,48.3px);margin:0 0 48px">Your Journey Begins Here</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;text-align:left">
+      <sc-for list="{{ days3 }}" as="day" hint-placeholder-count="3">
+        <div style="background:#fff;border:1px solid rgba(21,22,37,.10);border-top:3px solid #C65A2E;border-radius:14px;padding:32px;box-shadow:0 4px 16px rgba(21,22,37,.04)">
+          <div style="color:#C65A2E;font-size:16.6px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px">{{ day.label }}</div>
+          <h3 style="font-family:'Playfair Display',serif;font-weight:500;font-size:29px;margin:0 0 14px">{{ day.title }}</h3>
+          <p style="font-size:22.3px;line-height:1.65;color:rgba(21,22,37,.75);margin:0">{{ day.desc }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="background:#0B0B0F;padding:96px 48px">
+    <div style="max-width:1260px;margin:0 auto;text-align:center">
+      <div style="color:#DFC45A;font-size:16.6px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;margin-bottom:14px">The Room</div>
+      <h2 style="font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(34.5px,4.03vw,48.3px);color:#F8F6ED;margin:0 0 20px">Who You'll Rise With</h2>
+      <p style="font-size:25px;line-height:1.65;color:rgba(248,246,237,.75);max-width:62ch;margin:0 auto 24px">Learn from visionary authors, entrepreneurs, leaders, healers, and change-makers who are creating movements around work that truly matters.</p>
+      <sc-for list="{{ themes }}" as="th" hint-placeholder-count="5">
+        <div style="margin-top:64px">
+          <div style="display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:36px">
+            <div style="height:1px;width:56px;background:rgba(223,196,90,.45)"></div>
+            <div style="color:#DFC45A;font-size:16.6px;font-weight:700;letter-spacing:.22em;text-transform:uppercase">{{ th.title }}</div>
+            <div style="height:1px;width:56px;background:rgba(223,196,90,.45)"></div>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:28px;text-align:center">
+            <sc-for list="{{ th.people }}" as="sp" hint-placeholder-count="3">
+              <div style="box-sizing:border-box;flex:0 0 340px;background:rgba(248,246,237,.04);border:1px solid rgba(223,196,90,.5);border-radius:14px;padding:36px 24px;display:flex;flex-direction:column;align-items:center;gap:16px">
+                <div style="padding:2px;border-radius:50%;background:linear-gradient(145deg,#EBD589 0%,#A8862F 48%,#EBD589 100%);box-shadow:0 4px 18px rgba(223,196,90,.2)">
+                  <div style="border-radius:50%;overflow:hidden;filter:saturate(1.08) sepia(.07);display:block">
+                    <x-import component-from-global-scope="image-slot" from="./image-slot.js" hint-size="112px,112px" id="{{ sp.slotId }}" shape="circle" src="{{ sp.src }}" placeholder="Drop photo" style="width:112px;height:112px;display:block"></x-import>
+                  </div>
+                </div>
+                <div>
+                  <div style="font-family:'Playfair Display',serif;font-size:25.5px;color:#DFC45A;margin-bottom:6px">{{ sp.name }}</div>
+                  <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:25px;color:#C65A2E">{{ sp.niche }}</div>
+                </div>
+                <div style="font-family:Lato,sans-serif;font-size:27.8px;line-height:1.5;color:rgba(248,246,237,.8);max-width:30ch">{{ sp.topic }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="max-width:1160px;margin:0 auto;padding:96px 48px;display:flex;flex-wrap:wrap;align-items:center;gap:64px">
+    <div style="flex:0 0 345px;display:flex;justify-content:center">
+      <div style="padding:11px;border:1px solid rgba(223,196,90,.5)">
+        <img src="assets/web/nunaisi-host.jpg" alt="Nunaisi Ma" style="width:345px;height:414px;object-fit:cover;object-position:50% 50%;box-shadow:0 20px 50px rgba(21,22,37,.14)" />
+      </div>
+    </div>
+    <div style="flex:1 1 330px;min-width:300px">
+      <div style="color:#C65A2E;font-size:16.6px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;margin-bottom:16px">Your Guide</div>
+      <h2 style="font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(32.2px,3.81vw,43.7px);line-height:1.15;margin:0 0 26px">About Your Host<br /><em style="color:#C65A2E;font-style:italic">Nunaisi Ma</em></h2>
+      <p style="font-size:25px;line-height:1.7;color:rgba(21,22,37,.8);max-width:52ch;margin:0 0 20px">After building a successful business, stepping away to travel the world with my family, rebuilding after cancer, and discovering a new way to work with AI, I created We Rise Together because I believe wisdom must be shared, especially in these pivotal times, and the women carrying it deserve businesses that support them.</p>
+      <p style="font-size:25px;line-height:1.7;color:rgba(21,22,37,.8);max-width:52ch;margin:0 0 28px">Because when the right wisdom reaches the right people, lives change.</p>
+      <div style="height:1px;width:64px;background:rgba(198,90,46,.4);margin-bottom:18px"></div>
+      <div style="color:#C65A2E;font-size:16.6px;font-weight:700;letter-spacing:.14em;text-transform:uppercase">Soul Guide &amp; Authority Book Mentor</div>
+    </div>
+  </section>
+
+  <div style="display:flex;align-items:center;justify-content:center;gap:16px;padding:8px 24px 8px">
+    <div style="height:1px;width:80px;background:#DFC45A"></div>
+    <img src="assets/rise-tribe-symbol.png" alt="" style="width:44px;height:44px;object-fit:contain" />
+    <div style="height:1px;width:80px;background:#DFC45A"></div>
+  </div>
+
+  <section style="max-width:900px;margin:0 auto;padding:40px 48px 96px">
+    <div style="text-align:center;color:#C65A2E;font-size:16.6px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;margin-bottom:14px">The Details</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(34.5px,4.03vw,48.3px);text-align:center;margin:0 0 48px">Everything You Need to Know</h2>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid rgba(21,22,37,.12)">
+      <sc-for list="{{ details }}" as="d" hint-placeholder-count="4">
+        <div style="padding:28px 12px;border-bottom:1px solid rgba(21,22,37,.12);text-align:center">
+          <div style="font-size:16.6px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#C65A2E;margin-bottom:10px">{{ d.label }}</div>
+          <div style="font-family:'Playfair Display',serif;font-size:29px">{{ d.value }}</div>
+          <sc-if value="{{ d.note }}" hint-placeholder-val="{{ false }}">
+            <div style="font-size:16.8px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(21,22,37,.5);margin-top:8px">{{ d.note }}</div>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="background:#0B0B0F;padding:104px 48px;text-align:center">
+    <div style="max-width:760px;margin:0 auto">
+      <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(27.6px,3.36vw,36.8px);line-height:1.5;color:#F8F6ED;margin:0 0 18px">You carry a unique light.</p>
+      <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(27.6px,3.36vw,36.8px);line-height:1.5;color:#DFC45A;margin:0 0 40px">Every time you choose to let it shine, someone's world becomes a little brighter.</p>
+      <img src="https://assets.cdn.filesafe.space/9GsaTP92TzGKJjfPisnu/media/69edad0f717d5dd4e10c3902.png" alt="Nunaisi Ma signature" style="height:64px;width:auto;object-fit:contain;margin-bottom:14px" />
+      <div style="color:rgba(248,246,237,.65);font-size:18px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:64px">Soul Guide &amp; Authority Book Mentor</div>
+
+      <p style="font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(32px,3.3vw,40px);line-height:1.45;color:#F8F6ED;max-width:44ch;margin:0 auto 48px">If you've spent years doing work that changes lives while quietly knowing your mission was meant to reach further, this room was created for you.</p>
+
+      <div style="padding:0;line-height:0;max-width:480px;margin:0 auto">
+        <iframe src="https://thehub-api.mastermind.com/widget/form/8TKEeHlzeDj2SZGuWnbt" id="inline-8TKEeHlzeDj2SZGuWnbt-close" data-layout="{'id':'INLINE'}" data-form-id="8TKEeHlzeDj2SZGuWnbt" title="We Rise Together Registration" scrolling="no" style="display:block;width:100%;height:340px;border:none;background:transparent"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#F8F6ED;padding:40px 48px;text-align:center;border-top:1px solid rgba(21,22,37,.08)">
+    <img src="assets/rise-tribe-symbol.png" alt="" style="width:56px;height:56px;object-fit:contain;margin-bottom:12px" />
+    <div style="font-size:19.4px;color:rgba(21,22,37,.6);letter-spacing:.02em">© 2026 Nunaisi Ma · We Rise Together, The Authority &amp; Visibility Summit · Edition 07</div>
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    now: Date.now(),
+    form1Name: '', form1Email: '', form1Submitted: false,
+    form2Name: '', form2Email: '', form2Submitted: false,
+  };
+
+  componentDidMount() {
+    this._timer = setInterval(() => this.setState({ now: Date.now() }), 1000);
+    this._onMsg = (e) => {
+      const d = e.data;
+      if (!d) return;
+      let h = null, id = null;
+      if (typeof d === 'string' && d.indexOf('height') > -1) {
+        try { const p = JSON.parse(d); h = p.height || (p.payload && p.payload.height); id = p.id || (p.payload && p.payload.id); } catch (err) {}
+      } else if (typeof d === 'object') {
+        h = d.height || (d.payload && d.payload.height);
+        id = d.id || (d.payload && d.payload.id);
+      }
+      if (!h) return;
+      const frames = document.querySelectorAll('iframe[data-form-id]');
+      frames.forEach((f) => {
+        if (id && f.id && f.id.indexOf(id) === -1 && id.indexOf(f.id) === -1) {
+          if (f.contentWindow !== e.source) return;
+        }
+        if (f.contentWindow === e.source || frames.length === 1 || !e.source) {
+          f.style.height = (parseInt(h, 10) + 4) + 'px';
+        }
+      });
+    };
+    window.addEventListener('message', this._onMsg);
+  }
+  componentWillUnmount() {
+    clearInterval(this._timer);
+    if (this._onMsg) window.removeEventListener('message', this._onMsg);
+  }
+
+  submitForm1 = (e) => {
+    e.preventDefault();
+    if (this.state.form1Email) this.setState({ form1Submitted: true });
+  };
+  submitForm2 = (e) => {
+    e.preventDefault();
+    if (this.state.form2Email) this.setState({ form2Submitted: true });
+  };
+
+  renderVals() {
+    const target = Date.parse('2026-08-17T14:00:00Z');
+    const diff = target - this.state.now;
+    const live = diff <= 0;
+    const totalSec = Math.max(0, Math.floor(diff / 1000));
+    const days = Math.floor(totalSec / 86400);
+    const hours = Math.floor((totalSec % 86400) / 3600);
+    const mins = Math.floor((totalSec % 3600) / 60);
+    const secs = totalSec % 60;
+    const pad = n => String(n).padStart(2, '0');
+
+    const speakers = [
+      { name: 'Caroline Arco', niche: 'Spiritual Leadership', theme: 'Identity & Inner Authority', topic: 'The Room Before the Stage: The Woman You Become Before the World Knows Your Name', slotId: 'speaker-13', src: 'assets/web/caroline-arco.jpg' },
+      { name: 'Megan Yelaney', niche: 'Brand Story', theme: 'Identity & Inner Authority', topic: 'Your Origin Story Holds the Key to Your Soul Mission. Learn How to Read It', slotId: 'speaker-2', src: 'assets/web/megan-yelaney.jpg' },
+      { name: 'Joy Taylor', niche: 'Conscious Leadership', theme: 'Identity & Inner Authority', topic: 'How Authority Emerges from Authenticity: Why becoming more of yourself is your greatest advantage', slotId: 'speaker-10', src: 'assets/web/joy-taylor.jpg' },
+      { name: 'Mar Guerrero', niche: 'Sacred Embodiment', theme: 'Identity & Inner Authority', topic: 'Embody Your Pure Gold Frequency', slotId: 'speaker-3', src: 'assets/web/mar-guerrero.jpg' },
+      { name: 'Michelle Kopper', niche: 'Visibility & Voice', theme: 'Visibility & Authority', topic: 'Your Authority Frequency: The Missing Link Between Your Message and Meaningful Impact', slotId: 'speaker-14', src: 'assets/web/michelle-kopper.jpg' },
+      { name: 'Eli Natoli', niche: 'Authority Marketing', theme: 'Visibility & Authority', topic: "How to Become the Obvious Choice for the People You're Meant to Serve", slotId: 'speaker-7', src: 'assets/web/eli-natoli.jpg' },
+      { name: 'Kimberly Spencer', niche: 'Podcast Visibility', theme: 'Visibility & Authority', topic: 'Become the Guest Everyone Wants to Invite: How podcast guesting builds trust, authority, and meaningful visibility', slotId: 'speaker-15', src: 'assets/web/kimberly-spencer.jpg' },
+      { name: 'Nunaisi Ma', label: 'Founder, We Rise Together', niche: 'Authority Books', theme: 'Visibility & Authority', topic: "Turn Your Life's Work Into the Book That Opens Doors, Builds Authority, and Leaves a Lasting Legacy", slotId: 'speaker-nunaisi-1', src: 'assets/web/nunaisi-founder.jpg' },
+      { name: 'Tammy Lawman', niche: 'Heart-Led Partnerships', theme: 'Partnerships & Growth', topic: 'Amplify Your Impact: How Heart-Centered Partnerships Help Your Wisdom Reach Further', slotId: 'speaker-5', src: 'assets/web/tammy-lawman.jpg' },
+      { name: 'Matt McWilliams', niche: 'Affiliate Partnerships', theme: 'Partnerships & Growth', topic: 'How to Build 100+ Heart-Centered Partnerships That Expand Your Impact', slotId: 'speaker-12', src: 'assets/web/matt-mcwilliams.jpg' },
+      { name: 'Nunaisi Ma', label: 'Founder, We Rise Together', niche: 'AI Business Strategy', theme: 'AI & The Future of Business', topic: 'Go Behind the Scenes of My AI Team: Learn how to build a business that supports your mission, so you can stay in your zone of genius', slotId: 'speaker-nunaisi-2', src: 'assets/web/nunaisi-founder.jpg' },
+      { name: 'Derek Rydall', niche: 'Awakened Wealth', theme: 'AI & The Future of Business', topic: 'A Whole New Human: Ten Shifts That Will Help You Flourish in the Age of AI', slotId: 'speaker-1', src: 'assets/web/derek-rydall.jpg' },
+      { name: 'Jon Benson', niche: 'AI Copywriting', theme: 'AI & The Future of Business', topic: 'How to Scale Your Voice Without Losing Your Humanity: Use AI to write emails that sound authentically you', slotId: 'speaker-4', src: 'assets/web/jon-benson.jpg' },
+      { name: 'Sigrun Gudjonsdottir', niche: 'AI-First Business', theme: 'AI & The Future of Business', topic: 'AI-First, Not Human-Last: Build a business where technology amplifies humanity instead of replacing it', slotId: 'speaker-9', src: 'assets/web/sigrun.jpg' },
+      { name: 'Megan Camille', niche: 'Intuitive Business', theme: 'Business Growth & Sustainability', topic: '$500K in 3 Hours a Day: Build a business that gives you more life, not just more income', slotId: 'speaker-6', src: 'assets/web/megan-camille.jpg' },
+      { name: 'Nyrie Roos', niche: 'Scalable Systems', theme: 'Business Growth & Sustainability', topic: 'Your Masterpiece Offer Deserves a Business That Can Carry It', slotId: 'speaker-11', src: 'assets/web/nyrie-roos.jpg' },
+    ].map(s => ({ label: 'Special Guest', ...s }));
+
+    const tbdSpeakers = Array.from({ length: 7 }, (_, i) => ({ slotId: 'speaker-tbd-' + (i + 1) }));
+
+    const days3 = [
+      { label: 'Day 1 · Aug 17', title: "Step into the woman you're here to become.", desc: 'Discover the next version of yourself, reconnect with your deepest purpose, and build the inner authority that allows your work to be fully seen.' },
+      { label: 'Day 2 · Aug 18', title: 'Share the wisdom only you can share.', desc: 'Clarify your message, own your voice, and learn how to communicate your unique medicine with confidence, authenticity, and authority.' },
+      { label: 'Day 3 · Aug 19', title: 'Build a business that carries your wisdom.', desc: 'Create the systems, support, and AI-powered strategy that free you to stay in your zone of genius while your impact continues to grow.' },
+    ];
+
+    const themeOrder = [
+      'Identity & Inner Authority',
+      'Visibility & Authority',
+      'Partnerships & Growth',
+      'AI & The Future of Business',
+      'Business Growth & Sustainability',
+    ];
+    const themes = themeOrder.map(title => ({ title, people: speakers.filter(s => s.theme === title) }));
+
+    const details = [
+      { label: 'Dates', value: 'Aug 17–19, 2026' },
+      { label: 'Format', value: 'Fully live, online' },
+      { label: 'Daily Window', value: '10:00 AM to 2:00 PM', note: 'US Eastern (EDT)' },
+      { label: 'Investment', value: 'Free to attend' },
+    ];
+
+    return {
+      countdownLive: live,
+      countdownNotLive: !live,
+      cdDays: pad(days), cdHours: pad(hours), cdMins: pad(mins), cdSecs: pad(secs),
+      speakers,
+      themes,
+      days3,
+      details,
+      form1Name: this.state.form1Name,
+      form1Email: this.state.form1Email,
+      form1Submitted: this.state.form1Submitted,
+      formOneNotSubmitted: !this.state.form1Submitted,
+      onForm1Name: e => this.setState({ form1Name: e.target.value }),
+      onForm1Email: e => this.setState({ form1Email: e.target.value }),
+      submitForm1: this.submitForm1,
+      form2Name: this.state.form2Name,
+      form2Email: this.state.form2Email,
+      form2Submitted: this.state.form2Submitted,
+      formTwoNotSubmitted: !this.state.form2Submitted,
+      onForm2Name: e => this.setState({ form2Name: e.target.value }),
+      onForm2Email: e => this.setState({ form2Email: e.target.value }),
+      submitForm2: this.submitForm2,
+    };
+  }
+}
+</script>
+</body>
+</html>
